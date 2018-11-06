@@ -63,3 +63,16 @@ golangで作成したアプリには何が必要だろうか?
 golangでbuildすると一つのファイルが吐き出される  
 つまりこれだけアレばいいはずである  
 今回でいうとmain.goでもその他パッケージでもなくmainが必要である  
+
+## イメージを小さくする
+mainのファイルさえあればいいのでmainのファイルをbuild時に取り出す  
+そこでdockerでマルチステージビルドを使う  
+
+マルチステージビルドについては[docker docs](https://docs.docker.com/)を見るといいだろう
+> Multi-stage builds are a new feature requiring Docker 17.05 or higher on the daemon and client. Multistage builds are useful to anyone who has struggled to optimize Dockerfiles while keeping them easy to read and maintain.
+[Use multi-stage buildsより](https://docs.docker.com/develop/develop-images/multistage-build/)
+
+なんかいろいろ書いてあって  
+
+`Dockerfilesの読み込みと保守を容易にしながらDockerfilesを最適化するのに苦労している人にとって役に立ちます。`  
+と最後の方に書いてある  
