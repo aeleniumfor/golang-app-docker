@@ -1,8 +1,8 @@
 # なぜやるの?
-dockerでアプリを動かすときdocker imageのサイズが大きくなる  
-このimageサイズをできるだけ小さくしたい
+dockerでアプリを動かすときdocker imageのサイズが大きくなる    
+このimageサイズをできるだけ小さくしたい  
 # どうやるの?
-今回はdocker fileがメインなのgoファイルは共通にしている  
+今回はdocker fileがメインなのgoファイルは共通にしている   
 使用するプログラムは以下になる  
 main.go  
 
@@ -24,12 +24,12 @@ func main() {
 }
 ```
 簡単なwebサーバでこれを動かして`curl`を叩くと`Hello, World`が帰ってくる  
-ちなみにディレクトリ構成は以下のようになっている
+ちなみにディレクトリ構成は以下のようになっている  
 
 ## 今までのやり方
-比較のため今までのdocker fileを紹介する
+比較のため今までのdocker fileを紹介する  
 
-before/dockerfile
+before/dockerfile  
 
 ```dockerfile
 FROM golang:1.10-alpine3.7
@@ -45,7 +45,7 @@ $ docker build -t golang-docker-before before/
 Successfully tagged golang-docker-before:latest
 ```
 これが出てきたらbuildは正常に終わっているだろう  
-次に`イメージのサイズを見る
+次に`イメージのサイズを見る  
 
 ```bash
 REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
@@ -56,3 +56,10 @@ golang                 1.10-alpine3.7      7f9031684cc1        3 days ago       
 さっき作ったgolagn-docker-beforeのイメージサイズはどうだろうか?  
 264Mある....でかい  
 そもそもgolangのイメージが大きい  
+
+
+## 何が必要か
+golangで作成したアプリには何が必要だろうか?  
+golangでbuildすると一つのファイルが吐き出される  
+つまりこれだけアレばいいはずである  
+今回でいうとmain.goでもその他パッケージでもなくmainが必要である  
