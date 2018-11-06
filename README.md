@@ -1,10 +1,10 @@
 # なぜやるの?
-dockerでアプリを動かすときdocker imageのサイズが大きくなる
+dockerでアプリを動かすときdocker imageのサイズが大きくなる  
 このimageサイズをできるだけ小さくしたい
 # どうやるの?
-今回はdocker fileがメインなのgoファイルは共通にしている
-使用するプログラムは以下になる
-main.go
+今回はdocker fileがメインなのgoファイルは共通にしている  
+使用するプログラムは以下になる  
+main.go  
 
 ```go
 package main
@@ -23,7 +23,7 @@ func main() {
   http.ListenAndServe(":8080", nil)
 }
 ```
-簡単なwebサーバでこれを動かして`curl`を叩くと`Hello, World`が帰ってくる
+簡単なwebサーバでこれを動かして`curl`を叩くと`Hello, World`が帰ってくる  
 ちなみにディレクトリ構成は以下のようになっている
 
 ## 今までのやり方
@@ -44,7 +44,7 @@ $ docker build -t golang-docker-before before/
 
 Successfully tagged golang-docker-before:latest
 ```
-これが出てきたらbuildは正常に終わっているだろう
+これが出てきたらbuildは正常に終わっているだろう  
 次に`イメージのサイズを見る
 
 ```bash
