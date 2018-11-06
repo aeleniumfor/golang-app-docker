@@ -53,6 +53,6 @@ golang-docker-before   latest              b289ef900ec0        3 minutes ago    
 golang                 1.10-alpine3.7      7f9031684cc1        3 days ago          257MB
 
 ```
-さっき作ったgolagn-docker-beforeのイメージサイズはどうだろうか?
-264Mある....でかい
-そもそもgolangのイメージが大きい
+さっき作ったgolagn-docker-beforeのイメージサイズはどうだろうか?  
+264Mある....でかい  
+そもそもgolangのイメージが大きい  
